@@ -18,8 +18,8 @@ async function startServer() {
         const result = await pool.query("SELECT NOW()");
         console.log("PostgreSQL connected:", result.rows[0]);
 
-        server.listen(PORT, () => {
-            console.log(` Server running on port ${PORT}`);
+        server.listen(PORT, "0.0.0.0", () => {
+            console.log(`Server running on port ${PORT}`);
         });
 
     } catch (err) {
